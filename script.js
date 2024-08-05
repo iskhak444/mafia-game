@@ -1,19 +1,19 @@
 document.getElementById('startGame').addEventListener('click', startGame);
 
-const roles = ["Mafia", "Detective", "Doctor", "Citizen", "Jester", "Bodyguard"];
+const roles = ["Мафия", "Детектив", "Доктор", "Гражданин", "Шут", "Телохранитель"];
 let players = [];
 
 function startGame() {
-    let numPlayers = prompt("Enter the number of players:");
+    let numPlayers = prompt("Введите количество игроков:");
     if (numPlayers < 4) {
-        alert("You need at least 4 players to start the game.");
+        alert("Для начала игры необходимо как минимум 4 игрока.");
         return;
     }
 
     players = [];
     for (let i = 0; i < numPlayers; i++) {
-        let playerName = prompt(`Enter the name of player ${i + 1}:`);
-        players.push({ name: playerName, role: "Citizen", alive: true });
+        let playerName = prompt(`Введите имя игрока ${i + 1}:`);
+        players.push({ name: playerName, role: "Гражданин", alive: true });
     }
 
     assignRoles();
@@ -22,12 +22,12 @@ function startGame() {
 
 function assignRoles() {
     let shuffledPlayers = players.sort(() => Math.random() - 0.5);
-    shuffledPlayers[0].role = "Mafia";
-    shuffledPlayers[1].role = "Detective";
-    shuffledPlayers[2].role = "Doctor";
-    shuffledPlayers[3].role = "Jester";
-    shuffledPlayers[4].role = "Bodyguard";
-    // Remaining players are Citizens by default
+    shuffledPlayers[0].role = "Мафия";
+    shuffledPlayers[1].role = "Детектив";
+    shuffledPlayers[2].role = "Доктор";
+    shuffledPlayers[3].role = "Шут";
+    shuffledPlayers[4].role = "Телохранитель";
+    // Оставшиеся игроки по умолчанию становятся гражданами
 }
 
 function displayPlayers() {
@@ -43,7 +43,7 @@ function displayPlayers() {
 
         let backDiv = document.createElement('div');
         backDiv.classList.add('back');
-        backDiv.textContent = `Role: ${player.role}`;
+        backDiv.textContent = `Роль: ${player.role}`;
 
         playerDiv.appendChild(frontDiv);
         playerDiv.appendChild(backDiv);

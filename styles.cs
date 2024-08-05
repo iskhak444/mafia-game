@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #282c34;
+    background-color: #000;
     color: white;
     text-align: center;
     margin: 0;
@@ -10,6 +10,18 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
 }
 
 h1 {
