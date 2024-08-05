@@ -35,9 +35,18 @@ function displayPlayers() {
     playersDiv.innerHTML = "";
     players.forEach(player => {
         let playerDiv = document.createElement('div');
-        playerDiv.textContent = `${player.name} (${player.role})`;
+        playerDiv.classList.add('player-card');
+
+        let frontDiv = document.createElement('div');
+        frontDiv.classList.add('front');
+        frontDiv.textContent = `${player.name} (${player.role})`;
+
+        let backDiv = document.createElement('div');
+        backDiv.classList.add('back');
+        backDiv.textContent = `Role: ${player.role}`;
+
+        playerDiv.appendChild(frontDiv);
+        playerDiv.appendChild(backDiv);
         playersDiv.appendChild(playerDiv);
     });
 }
-
-// Additional game logic can be added here, such as night and day phases, voting, etc.
